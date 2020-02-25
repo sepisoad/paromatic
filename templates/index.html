@@ -1,0 +1,31 @@
+{$ (use ../code/globals) $}
+
+<!DOCTYPE html>
+<html>
+
+	{{ {:template (require "head.html")} }}
+
+<body>
+
+	{{ {:template (require "navbar.html")} }}
+
+	<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center {{ text-primary }}">Persian Aromatic</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ ((0 nav-items) :url) }}" id="download-button" class="btn-large waves-effect waves-light {{ color-secondary }} {{ text-secondary }}">Products</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+	{{ content }}
+
+	{{ {:template (require "footer.html")} }}
+</body>
+</html>

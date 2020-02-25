@@ -1,0 +1,32 @@
+{$ (use ../code/globals) $}
+
+<nav class="{{ color-primary }}" role="navigation">
+  <div class="nav-wrapper container">
+  	<a id="logo-container" href="https://paromatic.com" class="brand-logo {{ text-primary }}">Paromatic</a>
+    <ul class="right hide-on-med-and-down">
+    	{% (each item nav-items %}
+        <li><a href="{{ (item :url) }}">{{ (item :title) }}</a></li>
+      {% ) %}
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav {{ color-secondary }} {{ text-tertiary }}" style="transform: translateX(-105%);">
+      {% (each item nav-items %}
+        <li><a href="{{ (item :url) }}">{{ (item :title) }}</a></li>
+      {% ) %}
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+
+<script type="text/javascript" charset="utf-8" async defer>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, {});
+  });
+</script>
+        
